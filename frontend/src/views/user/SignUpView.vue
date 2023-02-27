@@ -49,7 +49,7 @@
                 </form>
             </div>
         </div>
-        <Modal :show="showSuccessModal" @closed="closed" title="Registration successfull" text="Go to onboadring page.">
+        <Modal :show="showSuccessModal" @closed="closed" title="Registration successfull">
         </Modal>
     </div>
 </template>
