@@ -19,9 +19,14 @@ import {LoadingPlugin} from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/css/index.css'
 app.use(LoadingPlugin)
 
-
 app.config.globalProperties.axios = axios
-app.config.globalProperties.apiUrl = "http://127.0.0.1:8000/api/"
+
+let apiUrl = new URL('/api/', window.location).href
+if (window.location.hostname == "127.0.0.1" || window.location.hostname == "localhost")
+    apiUrl = "http://127.0.0.1:8000/api/"
+
+app.config.globalProperties.apiUrl = apiUrl
+
 //app.config.globalProperties.user = null
 
 const user = JSON.parse(localStorage.getItem('user'));
