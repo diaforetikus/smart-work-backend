@@ -43,7 +43,8 @@ app.use(router)
  * Web3Provider
  */
 //app.config.unwrapInjectedRef = true 
-app.config.globalProperties.web3Provider = new ethers.providers.Web3Provider(window.ethereum)
+if (window.ethereum)
+    app.config.globalProperties.web3Provider = new ethers.providers.Web3Provider(window.ethereum)
 
 
 /**
